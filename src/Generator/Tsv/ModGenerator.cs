@@ -16,7 +16,7 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Tsv
         private readonly TsvData _characterSkillLevelDetails = new TsvData { TableName = "character_skill_level_details", Value = "0" };
         private readonly TsvData _characterSkillLevelToEffectsJunctions = new TsvData { TableName = "character_skill_level_to_effects_junctions", Value = "1" };
         private readonly TsvData _characterSkillNodes = new TsvData { TableName = "character_skill_nodes", Value = "5" };
-        private readonly TsvData _characterExperienceSkillTiers = new TsvData { TableName = "character_experience_skill_tiers" };
+        private readonly TsvData _characterExperienceSkillTiers = new TsvData { TableName = "character_experience_skill_tiers", Value = "2" };
 
         private readonly string _outputDirectory;
         private readonly Database _db;
@@ -177,9 +177,9 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Tsv
             _characterExperienceSkillTiers.Add(new[]
             {
                 "agent_key",
-                "skill_rank",
                 "experience_threshold",
                 "skill_points",
+                "skill_rank",
                 "optional_campaign_key",
                 "for_army",
                 "for_navy"
@@ -196,9 +196,9 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Tsv
                     _characterExperienceSkillTiers.Add(new[]
                     {
                         item.Key,
-                        $"{level}",
                         $"{xpThreshold}",
                         "1",
+                        $"{level}",
                         "",
                         "False",
                         "False"
