@@ -185,7 +185,7 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Tsv
                 "for_navy"
             });
 
-            var maxLevelMap = _db.GetMaxLevelMap();
+            var maxLevelMap = _db.GetMaxLevelPerAgentType();
 
             foreach (var item in maxLevelMap.OrderBy(x => x.Key))
             {

@@ -10,9 +10,9 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Xml
     {
         private readonly string _dataDirectory;
 
-        public Database(string dataDirectory)
+        public Database(string assemblyKitPath)
         {
-            _dataDirectory = dataDirectory;
+            _dataDirectory = Path.Combine(assemblyKitPath, "raw_data", "db");
 
             CharacterSkillLevelToEffectsJunctions = Deserialize<character_skill_level_to_effects_junctions>("character_skill_level_to_effects_junctions");
             CharacterSkillNodes = Deserialize<character_skill_nodes>("character_skill_nodes");
@@ -25,7 +25,7 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Xml
 
         public character_skill_node_sets CharacterSkillNodeSets { get; private set; }
 
-        public IDictionary<string, int> GetMaxLevelMap()
+        public IDictionary<string, int> GetMaxLevelPerAgentType()
         {
             var result = new Dictionary<string, int>();
             foreach (var set in CharacterSkillNodeSets.node_sets)
@@ -37,6 +37,27 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Xml
                     result.Add(set.agent_key, int.MinValue);
                 }
                 result[set.agent_key] = Math.Max(result[set.agent_key], pointsNeeded);
+            }
+            return result;
+        }
+
+        public Dictionary<string, Dictionary<int, List<character_skill_node_set>>> GetMaxLevelPerAgentTypeDetailed()
+        {
+            var result = new Dictionary<string, Dictionary<int, List<character_skill_node_set>>>();
+            foreach (var set in CharacterSkillNodeSets.node_sets)
+            {
+                var pointsNeeded = GetPointsForSet(set.key);
+
+                if (!result.ContainsKey(set.agent_key))
+                {
+                    result.Add(set.agent_key, new Dictionary<int, List<character_skill_node_set>>());
+                }
+                if (!result[set.agent_key].ContainsKey(pointsNeeded))
+                {
+                    result[set.agent_key].Add(pointsNeeded, new List<character_skill_node_set>());
+                }
+
+                result[set.agent_key][pointsNeeded].Add(set);
             }
             return result;
         }
