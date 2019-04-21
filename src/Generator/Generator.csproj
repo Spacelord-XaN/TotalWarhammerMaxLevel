@@ -53,6 +53,7 @@
     <Compile Include="Xml\CharacterSkillLevelToEffectsJunctions.cs" />
     <Compile Include="Xml\CharacterSkillNodes.cs" />
     <Compile Include="Xml\CharacterSkillNodeSets.cs" />
+    <Compile Include="Xml\CharacterSkills.cs" />
     <Compile Include="Xml\Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

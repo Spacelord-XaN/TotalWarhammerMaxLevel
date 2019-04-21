@@ -17,6 +17,7 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Xml
             CharacterSkillLevelToEffectsJunctions = Deserialize<character_skill_level_to_effects_junctions>("character_skill_level_to_effects_junctions");
             CharacterSkillNodes = Deserialize<character_skill_nodes>("character_skill_nodes");
             CharacterSkillNodeSets = Deserialize<character_skill_node_sets>("character_skill_node_sets");
+            CharacterSkills = Deserialize<character_skills>("character_skills");
         }
 
         public character_skill_level_to_effects_junctions CharacterSkillLevelToEffectsJunctions { get; private set; }
@@ -24,6 +25,8 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Xml
         public character_skill_nodes CharacterSkillNodes { get; private set; }
 
         public character_skill_node_sets CharacterSkillNodeSets { get; private set; }
+
+        public character_skills CharacterSkills { get; private set; }
 
         public IDictionary<string, int> GetMaxLevelPerAgentType()
         {
