@@ -1,6 +1,7 @@
 **/.vs/
 **/bin/
 **/obj/
+*.user
 src/packages/
 output/
 level60/
