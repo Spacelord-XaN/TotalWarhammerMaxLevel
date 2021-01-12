@@ -1,0 +1,5 @@
+<xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'  output="..\src\Generator\Xml">
+    <generateClasses language="CS" namespace="Xan.TotalWarhammerMaxLevel.Generator.Xml" options="properties">
+        <schema>tww2.xsd</schema>
+    </generateClasses>
+</xsd>

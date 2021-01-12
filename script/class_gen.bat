@@ -1,0 +1,1 @@
+xsd /parameters:class_gen_parameters.xml

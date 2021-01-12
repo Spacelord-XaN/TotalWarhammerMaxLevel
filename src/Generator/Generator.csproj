@@ -50,16 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Xml\CharacterSkillLevelToEffectsJunctions.cs" />
-    <Compile Include="Xml\CharacterSkillNodes.cs" />
-    <Compile Include="Xml\CharacterSkillNodeSets.cs" />
-    <Compile Include="Xml\CharacterSkills.cs" />
     <Compile Include="Xml\Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tsv\ModGenerator.cs" />
     <Compile Include="Tsv\TsvData.cs" />
     <Compile Include="Xml\Extensions.cs" />
+    <Compile Include="Xml\tww2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

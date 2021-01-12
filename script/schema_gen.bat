@@ -1,0 +1,1 @@
+java -jar ./trang.jar -I xml -O xsd agent_recruitment_categories.xml character_skill_node_sets.xml faction_agent_permitted_subtypes.xml factions.xml character_skill_level_to_effects_junctions.xml character_skill_nodes.xml character_skills.xml agent_subtypes.xml cultures_subcultures.xml effects.xml tww2.xsd

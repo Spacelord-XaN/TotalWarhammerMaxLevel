@@ -6,3 +6,5 @@ src/packages/
 output/
 level60/
 skillpoint_dump/
+script/*.xsd
+script/*.xml

@@ -36,7 +36,7 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Tsv
             CreateCharacterSkillNodes();
 
             //  Max levels
-            CreateCharacterExperienceSkillTiers();
+            //CreateCharacterExperienceSkillTiers();
 
             SaveToDisk();
         }
@@ -149,10 +149,11 @@ namespace Xan.TotalWarhammerMaxLevel.Generator.Tsv
                 "visible_in_ui"
             });
 
-            foreach (var setKey in _db.GetCharacterSkillNodeSetKeys())
+            foreach (var skillNodeSet in _db.CharacterSkillNodeSets)
             {
-                int indent;
-                int tier;
+                var setKey = skillNodeSet.key;
+                var indent =0 ;
+                var tier = 0;
                 _db.SearchFreeIndetAndTier(setKey, out indent, out tier);
 
                 _characterSkillNodes.Add(new[]
